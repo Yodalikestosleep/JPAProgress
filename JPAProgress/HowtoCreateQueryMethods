@@ -1,0 +1,8 @@
+List<ProductEntity> findByDateCreatedBetween(LocalDateTime startDate, LocalDateTime endDate);
+
+
+1. Return Type
+2. QuerySubject ( like findBy, getBy etc) need valid prefix
+3. QueryPredicate ( like DateCreatedBetween -> here between is an operator)
+
+refer Docs of spring.io for more

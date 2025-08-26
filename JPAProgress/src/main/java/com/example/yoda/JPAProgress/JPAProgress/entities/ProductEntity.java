@@ -23,13 +23,13 @@ import java.time.LocalDateTime;
         }
 
 )
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 50)
     private String sku;
 
     private String title;
