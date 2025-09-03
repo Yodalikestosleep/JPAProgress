@@ -1,6 +1,7 @@
 package com.example.yoda.JPAProgress.JPAProgress.repository;
 
 import com.example.yoda.JPAProgress.JPAProgress.entities.ProductEntity;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -21,6 +22,13 @@ public interface ProductRespository extends JpaRepository<ProductEntity,Long> {
     Optional<ProductEntity> findByTitleAndPrice(String title, BigDecimal price);
 
     List<ProductEntity> findByTitleLikeOrderByPrice(String title);
+    List<ProductEntity> findByOrderByPrice();
+    //Instead of tight coupling we can use the Sort class to make our code loosley coupled
+
+    //The function can take on what basis to sort and how to sort as parameter
+    List<ProductEntity> findBy(Sort sort);
+
+
 
 
 }
